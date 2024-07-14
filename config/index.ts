@@ -30,7 +30,9 @@ const pxTransformConfig: NonNullable<TaroPostCSSConfig['pxtransform']> = {
 };
 
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
-export default defineConfig((merge) => {
+export default defineConfig((merge, { mode }) => {
+  const buildMode = mode === 'production' ? 'build' : 'dev';
+
   const baseConfig: UserConfigExport = {
     projectName: 'taro-applet-boilerplate',
     date: '2024-7-12',
@@ -42,7 +44,7 @@ export default defineConfig((merge) => {
       828: 1.81 / 2,
     },
     sourceRoot: 'src',
-    outputRoot: 'dist',
+    outputRoot: `dist/${buildMode}/${process.env.TARO_ENV}`,
     plugins: [],
     defineConstants: {},
     copy: {
@@ -93,6 +95,9 @@ export default defineConfig((merge) => {
       },
       webpackChain(chain) {
         chain.resolve.plugin('tsconfig-paths').use(TsconfigPathsPlugin);
+      },
+      devServer: {
+        open: false,
       },
     },
     rn: {
