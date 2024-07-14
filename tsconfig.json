@@ -2,28 +2,30 @@
   "compilerOptions": {
     "target": "es2017",
     "jsx": "react-jsx",
-    "experimentalDecorators": true,
-    "rootDir": ".",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "paths": {
-      // TS5090 leading './'
-      "@/*": ["./src/*"]
-    },
-    "resolveJsonModule": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "skipLibCheck": true,
     "allowJs": true,
+    "resolveJsonModule": true,
+
+    "strict": true,
     "strictNullChecks": true,
     "noImplicitAny": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "noUncheckedIndexedAccess": true,
+
+    "rootDir": ".",
     "outDir": "lib",
-    "preserveConstEnums": true,
-    "removeComments": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
     "sourceMap": true,
-    "allowSyntheticDefaultImports": true
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "experimentalDecorators": true
   },
   "include": ["./src", "./types", "./config"],
   "compileOnSave": false

@@ -109,4 +109,10 @@ export default eslint(
       'ts/no-unused-vars': 'error',
     },
   },
+  {
+    files: ['tsconfig.json'],
+    rules: {
+      'jsonc/sort-keys': 'off',
+    },
+  },
 );
