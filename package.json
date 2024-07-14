@@ -1,12 +1,12 @@
 {
   "name": "taro-applet-boilerplate",
   "version": "0.0.0",
+  "description": "a template for applet project, with react and taro.",
   "author": "whaoa",
   "license": "MIT",
-  "description": "a template for applet project, with react and taro.",
+  "homepage": "https://github.com/whaoa/taro-applet-boilerplate#readme",
   "repository": "https://github.com/whaoa/taro-applet-boilerplate.git",
   "bugs": "https://github.com/whaoa/taro-applet-boilerplate/issues",
-  "homepage": "https://github.com/whaoa/taro-applet-boilerplate#readme",
   "keywords": [
     "taro",
     "react",

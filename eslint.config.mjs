@@ -44,7 +44,12 @@ export default eslint(
         version: 'detect',
       },
     },
-    rules: taroBuiltInRules,
+    rules: {
+      ...taroBuiltInRules,
+      'jsx-quotes': 'off',
+      [`${currentOriginalReactPluginName}/react-in-jsx-scope`]: 'off',
+      [`${currentOriginalReactPluginName}/jsx-uses-react`]: 'off',
+    },
   },
   {
     files: ['src/app.config.{js,ts}'],
