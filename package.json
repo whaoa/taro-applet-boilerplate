@@ -41,11 +41,6 @@
     "lint:eslint": "eslint .",
     "lint:stylelint": "stylelint \"src/**/*.{css,scss,sass}\""
   },
-  "browserslist": [
-    "last 3 versions",
-    "Android >= 4.1",
-    "ios >= 8"
-  ],
   "dependencies": {
     "@babel/runtime": "^7.21.5",
     "@tarojs/components": "3.6.33",
@@ -92,6 +87,19 @@
     "typescript": "^5.1.0",
     "webpack": "5.78.0"
   },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "consolidate>react": "18",
+        "consolidate>react-dom": "18"
+      }
+    }
+  },
+  "browserslist": [
+    "last 3 versions",
+    "Android >= 4.1",
+    "ios >= 8"
+  ],
   "templateInfo": {
     "name": "default",
     "typescript": true,
