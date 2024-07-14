@@ -38,7 +38,8 @@
     "dev:jd": "npm run build:jd -- --watch",
     "dev:quickapp": "npm run build:quickapp -- --watch",
     "dev:harmony-hybrid": "npm run build:harmony-hybrid -- --watch",
-    "lint:eslint": "eslint ."
+    "lint:eslint": "eslint .",
+    "lint:stylelint": "stylelint \"src/**/*.{css,scss,sass}\""
   },
   "browserslist": [
     "last 3 versions",
@@ -84,7 +85,8 @@
     "eslint-plugin-react-refresh": "^0.4.8",
     "postcss": "^8.4.18",
     "react-refresh": "^0.11.0",
-    "stylelint": "^14.4.0",
+    "stylelint": "^16.6.1",
+    "stylelint-config-standard-scss": "^13.1.0",
     "ts-node": "^10.9.1",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
     "typescript": "^5.1.0",
