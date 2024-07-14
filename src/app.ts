@@ -1,5 +1,3 @@
-import './app.scss';
-
 import type { PropsWithChildren } from 'react';
 
 function App({ children }: PropsWithChildren<any>) {
