@@ -89,11 +89,15 @@ export default eslint(
       'style/arrow-parens': ['error', 'always'],
       'style/jsx-quotes': ['error', 'prefer-double'],
       'style/multiline-ternary': ['error', 'always-multiline', { ignoreJSX: true }],
+      'style/no-confusing-arrow': ['error'],
       'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
       'import/order': [
         'error',
         {
           'groups': ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'type'],
+          'pathGroups': [
+            { pattern: '@/**', group: 'internal' },
+          ],
           'newlines-between': 'always-and-inside-groups',
           'pathGroupsExcludedImportTypes': [
             'builtin',
@@ -107,6 +111,17 @@ export default eslint(
         },
       ],
       'ts/no-unused-vars': 'error',
+    },
+  },
+  {
+    files: ['src/**/*.{js,jsx,ts,tsx}'],
+    languageOptions: {
+      globals: {
+        tt: 'readonly',
+      },
+    },
+    rules: {
+      'node/prefer-global/process': 'off',
     },
   },
   {
