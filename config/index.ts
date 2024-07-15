@@ -52,7 +52,13 @@ export default defineConfig((merge, { mode }) => {
       options: {},
     },
     framework: 'react',
-    compiler: 'webpack5',
+    compiler: {
+      type: 'webpack5',
+      // to fix some webpack error like this:
+      // EnvironmentNotSupportAsyncWarning:
+      // The generated code contains 'async/await' because this module is using "external script".
+      prebundle: { enable: false },
+    },
     cache: {
       enable: false, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
     },
@@ -77,12 +83,12 @@ export default defineConfig((merge, { mode }) => {
       publicPath: '/',
       staticDirectory: 'static',
       output: {
-        filename: 'js/[name].[hash:8].js',
+        filename: 'js/[name].[contenthash:8].js',
         chunkFilename: 'js/[name].[chunkhash:8].js',
       },
       miniCssExtractPluginOption: {
         ignoreOrder: true,
-        filename: 'css/[name].[hash].css',
+        filename: 'css/[name].[contenthash].css',
         chunkFilename: 'css/[name].[chunkhash].css',
       },
       postcss: {

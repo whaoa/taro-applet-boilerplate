@@ -91,7 +91,7 @@
     "tsconfig-paths-webpack-plugin": "^4.1.0",
     "typescript": "^5.1.0",
     "weapp-tailwindcss": "^3.3.7",
-    "webpack": "5.78.0"
+    "webpack": "^5.91.0"
   },
   "pnpm": {
     "peerDependencyRules": {
