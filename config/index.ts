@@ -3,18 +3,40 @@ import process from 'node:process';
 import { defineConfig } from '@tarojs/cli';
 
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+import { UnifiedWebpackPluginV5 as AppletTailwindPlugin } from 'weapp-tailwindcss/webpack';
 
 import devConfig from './dev';
 import prodConfig from './prod';
 
 import type { UserConfigExport } from '@tarojs/cli';
 
+type TaroConfig = Exclude<UserConfigExport, Promise<any> | ((...args: any[]) => any)>;
+type TaroPostCSSConfig = NonNullable<NonNullable<TaroConfig['mini']>['postcss']>;
+
+const cssModuleConfig: NonNullable<TaroPostCSSConfig['cssModules']> = {
+  enable: true,
+  config: {
+    namingPattern: 'module',
+    generateScopedName: '[local]-[hash:base64:6]',
+  },
+};
+
+const pxTransformConfig: NonNullable<TaroPostCSSConfig['pxtransform']> = {
+  enable: true,
+  config: {
+    minRootSize: 16,
+    onePxTransform: false,
+  },
+};
+
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
-export default defineConfig((merge) => {
+export default defineConfig((merge, { mode }) => {
+  const buildMode = mode === 'production' ? 'build' : 'dev';
+
   const baseConfig: UserConfigExport = {
     projectName: 'taro-applet-boilerplate',
     date: '2024-7-12',
-    designWidth: 750,
+    designWidth: 375,
     deviceRatio: {
       640: 2.34 / 2,
       750: 1,
@@ -22,7 +44,7 @@ export default defineConfig((merge) => {
       828: 1.81 / 2,
     },
     sourceRoot: 'src',
-    outputRoot: 'dist',
+    outputRoot: `dist/${buildMode}/${process.env.TARO_ENV}`,
     plugins: [],
     defineConstants: {},
     copy: {
@@ -36,26 +58,19 @@ export default defineConfig((merge) => {
     },
     mini: {
       postcss: {
-        pxtransform: {
-          enable: true,
-          config: {},
-        },
         url: {
           enable: true,
           config: {
             limit: 1024, // 设定转换尺寸上限
           },
         },
-        cssModules: {
-          enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
-          config: {
-            namingPattern: 'module', // 转换模式，取值为 global/module
-            generateScopedName: '[name]__[local]___[hash:base64:5]',
-          },
-        },
+        cssModules: cssModuleConfig,
+        pxtransform: pxTransformConfig,
       },
       webpackChain(chain) {
         chain.resolve.plugin('tsconfig-paths').use(TsconfigPathsPlugin);
+        // https://weapp-tw.icebreaker.top/docs/quick-start/frameworks/taro
+        chain.plugin('applet-tailwind').use(AppletTailwindPlugin, [{ appType: 'taro' }]);
       },
     },
     h5: {
@@ -75,16 +90,14 @@ export default defineConfig((merge) => {
           enable: true,
           config: {},
         },
-        cssModules: {
-          enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
-          config: {
-            namingPattern: 'module', // 转换模式，取值为 global/module
-            generateScopedName: '[name]__[local]___[hash:base64:5]',
-          },
-        },
+        cssModules: cssModuleConfig,
+        pxtransform: pxTransformConfig,
       },
       webpackChain(chain) {
         chain.resolve.plugin('tsconfig-paths').use(TsconfigPathsPlugin);
+      },
+      devServer: {
+        open: false,
       },
     },
     rn: {

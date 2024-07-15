@@ -1,0 +1,38 @@
+body,
+page,
+.taro-textarea {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto,
+    "PingFang SC", "Hiragino Sans GB", "Source Han Sans SC", "Noto Sans CJK SC", "Noto Sans SC",
+    "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Helvetica Neue", "Microsoft YaHei",
+    Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body,
+page {
+  line-height: 1.42;
+}
+
+page {
+  font-size: 14px;
+}
+
+view,
+text {
+  box-sizing: border-box;
+}
+
+/* remove navigation transition animation */
+.taro_router .taro_page {
+  transition: none !important;
+}
+
+/* fix text element can not selected */
+taro-text-core {
+  user-select: text !important;
+}
+
+/* remove whitespace around the canvas (inline-block) */
+taro-canvas-core canvas {
+  font-size: 0;
+}
