@@ -61,7 +61,8 @@
     "@tarojs/taro": "3.6.33",
     "query-string": "^8.2.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-hook-form": "^7.52.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "~2.21.3",
