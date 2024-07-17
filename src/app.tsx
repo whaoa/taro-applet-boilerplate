@@ -1,10 +1,15 @@
 import './styles/global.css';
 import './styles/tailwind.css';
+import { ReactQueryProvider } from './components/query';
 
 import type { PropsWithChildren } from 'react';
 
 function App({ children }: PropsWithChildren<any>) {
-  return children;
+  return (
+    <ReactQueryProvider>
+      {children}
+    </ReactQueryProvider>
+  );
 }
 
 export default App;
