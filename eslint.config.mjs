@@ -130,4 +130,10 @@ export default eslint(
       'jsonc/sort-keys': 'off',
     },
   },
+  {
+    files: ['*.md'],
+    rules: {
+      'style/max-len': 'off',
+    },
+  },
 );
