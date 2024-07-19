@@ -14,6 +14,9 @@ importers:
       '@tanstack/react-query':
         specifier: ^4.36.1
         version: 4.36.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@taroify/core':
+        specifier: 0.3.1-alpha.0
+        version: 0.3.1-alpha.0(@tarojs/components@3.6.33(@tarojs/helper@3.6.33)(@tarojs/runtime@3.6.33(@tarojs/shared@3.6.33))(@tarojs/shared@3.6.33)(@types/react@18.3.3)(postcss@8.4.39)(react@18.3.1))(@tarojs/taro@3.6.33(@tarojs/helper@3.6.33)(@tarojs/runtime@3.6.33(@tarojs/shared@3.6.33))(@types/react@18.3.3)(postcss@8.4.39))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tarojs/components':
         specifier: 3.6.33
         version: 3.6.33(@tarojs/helper@3.6.33)(@tarojs/runtime@3.6.33(@tarojs/shared@3.6.33))(@tarojs/shared@3.6.33)(@types/react@18.3.3)(postcss@8.4.39)(react@18.3.1)
@@ -59,6 +62,9 @@ importers:
       '@tarojs/taro':
         specifier: 3.6.33
         version: 3.6.33(@tarojs/helper@3.6.33)(@tarojs/runtime@3.6.33(@tarojs/shared@3.6.33))(@types/react@18.3.3)(postcss@8.4.39)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       query-string:
         specifier: ^8.2.0
         version: 8.2.0
@@ -1517,6 +1523,25 @@ packages:
       react-native:
         optional: true
 
+  '@taroify/core@0.3.1-alpha.0':
+    resolution: {integrity: sha512-V8tRQ5ZeX1uIrjp84grD2UR1WiDMIr9A5aQIu40r2c8zx/YsSRqx0J/FLkhO0Zvo9sX3A7y+BP+fz06EW0xegw==}
+    peerDependencies:
+      '@tarojs/components': '>=3'
+      '@tarojs/taro': '>=3'
+      react: ^18.2.0
+
+  '@taroify/hooks@0.3.1-alpha.0':
+    resolution: {integrity: sha512-Ag8iYIgAeBW3etBDTZl6VxgaqXTYmww7g2IknAGa4U8oxjXaI6U3ukiINGXrY0VMLxoTkoRakDb0YeKj4laS4w==}
+    peerDependencies:
+      '@tarojs/taro': '>=3'
+      lodash: ^4.17.21
+      react: ^18.2.0
+
+  '@taroify/icons@0.3.1-alpha.0':
+    resolution: {integrity: sha512-NDysyREjLb0UZOTKx4pOSyUcWs+ZJ7IofQgkckX6OF0TbsNA+1YlSiI0HKB0kWUNi4oL/71jvt21U3qdrsbpEg==}
+    peerDependencies:
+      '@tarojs/components': '>=3'
+
   '@tarojs/api@3.6.33':
     resolution: {integrity: sha512-FCpoCq/CS9HeK+AoYa2kCGyWWr0xERCsCJ8CtL16elTNBeUmiduxgKKoi6AHFS5LBl+OcTAfBXQhA2A52qKktw==}
 
@@ -2053,6 +2078,9 @@ packages:
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
+  '@vant/area-data@1.5.1':
+    resolution: {integrity: sha512-gR5TPEzTbxN1cTK1aDhCoyikSCLX7DAacxyXoKyI4SAsYYTZrDl/nLgQFIm9vLsvWzlPIda8xV8/U3x7M9k6ww==}
+
   '@vue/compiler-core@3.4.31':
     resolution: {integrity: sha512-skOiodXWTV3DxfDhB4rOf3OGalpITLlgCeOwb+Y9GJpfQ8ErigdBUHomBzvG78JoVE8MJoQsb+qhZiHfKeNeEg==}
 
@@ -2321,6 +2349,9 @@ packages:
   arrify@2.0.1:
     resolution: {integrity: sha512-3duEwti880xqi4eAMN8AyR4a0ByT90zoYdLlevfrvU43vb0YZwZVfxOgxWrLXXXpyugL0hNZc9G6BiB5B3nUug==}
     engines: {node: '>=8'}
+
+  asap@2.0.6:
+    resolution: {integrity: sha512-BSHWgDSAiKs50o2Re8ppvp3seVHXSRM44cdSsT9FfNEUUZLOGWVCsiWaRPWM1Znn+mqZ1OfVZ3z3DWEzSp7hRA==}
 
   asn1@0.2.6:
     resolution: {integrity: sha512-ix/FxPn0MDjeyJ7i/yoHGFt/EX6LyNbxSEhPPXODPL+KB0VPk86UYfL0lMdy+KCnv+fmvIzySwaK5COwqVbWTQ==}
@@ -2685,6 +2716,10 @@ packages:
   clone@1.0.4:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
+
+  clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
 
   co@4.6.0:
     resolution: {integrity: sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==}
@@ -3345,6 +3380,9 @@ packages:
 
   dom-converter@0.2.0:
     resolution: {integrity: sha512-gd3ypIPfOMr9h5jIKq8E3sHOTCjeirnl0WK5ZdS1AW0Odt0b1PaWaHdJ4Qk4klv+YB9aJBS7mESXjFoDQPu6DA==}
+
+  dom-helpers@5.2.1:
+    resolution: {integrity: sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==}
 
   dom-serializer@1.4.1:
     resolution: {integrity: sha512-VHwB3KfrcOOkelEG2ZOfxqLZdfkil8PtJi4P8N2MMXucZq2yLp75ClViUlOVwyoHEDjYU433Aq+5zWP61+RGag==}
@@ -6223,6 +6261,9 @@ packages:
   promise-polyfill@7.1.2:
     resolution: {integrity: sha512-FuEc12/eKqqoRYIGBrUptCBRhobL19PS2U31vMNTfyck1FxPyMfgsXyW4Mav85y/ZN1hop3hOwRlUDok23oYfQ==}
 
+  promise@8.3.0:
+    resolution: {integrity: sha512-rZPNPKTOYVNEEKFaq1HqTgOwZD+4/YHS5ukLzQCypkj+OkYx7iv0mA91lJlpPPZ8vMau3IIGj5Qlwrx+8iiSmg==}
+
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
 
@@ -6289,6 +6330,9 @@ packages:
     resolution: {integrity: sha512-ARhCpm70fzdcvNQfPoy49IaanKkTlRWF2JMzqhcJbhSFRZv7nPTvZJdcY7301IPmvW+/p0RgIWnQDLJxifsQ7g==}
     engines: {node: '>=8'}
 
+  raf@3.4.1:
+    resolution: {integrity: sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==}
+
   randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
 
@@ -6327,6 +6371,9 @@ packages:
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
 
+  react-is@18.3.1:
+    resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
+
   react-reconciler@0.27.0:
     resolution: {integrity: sha512-HmMDKciQjYmBRGuuhIaKA1ba/7a+UsM5FzOZsMO2JYHt9Jh8reCb7j1eDC95NOyUlKM9KRyvdx0flBuDvYSBoA==}
     engines: {node: '>=0.10.0'}
@@ -6340,6 +6387,12 @@ packages:
   react-refresh@0.4.3:
     resolution: {integrity: sha512-Hwln1VNuGl/6bVwnd0Xdn1e84gT/8T9aYNL+HAKDArLCS7LWjwr7StE30IEYbIkx0Vi3vs+coQxe+SQDbGbbpA==}
     engines: {node: '>=0.10.0'}
+
+  react-transition-group@4.4.5:
+    resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
+    peerDependencies:
+      react: '>=16.6.0'
+      react-dom: '>=16.6.0'
 
   react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
@@ -9323,6 +9376,34 @@ snapshots:
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
 
+  '@taroify/core@0.3.1-alpha.0(@tarojs/components@3.6.33(@tarojs/helper@3.6.33)(@tarojs/runtime@3.6.33(@tarojs/shared@3.6.33))(@tarojs/shared@3.6.33)(@types/react@18.3.3)(postcss@8.4.39)(react@18.3.1))(@tarojs/taro@3.6.33(@tarojs/helper@3.6.33)(@tarojs/runtime@3.6.33(@tarojs/shared@3.6.33))(@types/react@18.3.3)(postcss@8.4.39))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@taroify/hooks': 0.3.1-alpha.0(@tarojs/taro@3.6.33(@tarojs/helper@3.6.33)(@tarojs/runtime@3.6.33(@tarojs/shared@3.6.33))(@types/react@18.3.3)(postcss@8.4.39))(lodash@4.17.21)(react@18.3.1)
+      '@taroify/icons': 0.3.1-alpha.0(@tarojs/components@3.6.33(@tarojs/helper@3.6.33)(@tarojs/runtime@3.6.33(@tarojs/shared@3.6.33))(@tarojs/shared@3.6.33)(@types/react@18.3.3)(postcss@8.4.39)(react@18.3.1))
+      '@tarojs/components': 3.6.33(@tarojs/helper@3.6.33)(@tarojs/runtime@3.6.33(@tarojs/shared@3.6.33))(@tarojs/shared@3.6.33)(@types/react@18.3.3)(postcss@8.4.39)(react@18.3.1)
+      '@tarojs/taro': 3.6.33(@tarojs/helper@3.6.33)(@tarojs/runtime@3.6.33(@tarojs/shared@3.6.33))(@types/react@18.3.3)(postcss@8.4.39)
+      classnames: 2.5.1
+      lodash: 4.17.21
+      promise: 8.3.0
+      raf: 3.4.1
+      react: 18.3.1
+      react-is: 18.3.1
+      react-transition-group: 4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+    transitivePeerDependencies:
+      - react-dom
+
+  '@taroify/hooks@0.3.1-alpha.0(@tarojs/taro@3.6.33(@tarojs/helper@3.6.33)(@tarojs/runtime@3.6.33(@tarojs/shared@3.6.33))(@types/react@18.3.3)(postcss@8.4.39))(lodash@4.17.21)(react@18.3.1)':
+    dependencies:
+      '@tarojs/taro': 3.6.33(@tarojs/helper@3.6.33)(@tarojs/runtime@3.6.33(@tarojs/shared@3.6.33))(@types/react@18.3.3)(postcss@8.4.39)
+      '@vant/area-data': 1.5.1
+      lodash: 4.17.21
+      react: 18.3.1
+
+  '@taroify/icons@0.3.1-alpha.0(@tarojs/components@3.6.33(@tarojs/helper@3.6.33)(@tarojs/runtime@3.6.33(@tarojs/shared@3.6.33))(@tarojs/shared@3.6.33)(@types/react@18.3.3)(postcss@8.4.39)(react@18.3.1))':
+    dependencies:
+      '@tarojs/components': 3.6.33(@tarojs/helper@3.6.33)(@tarojs/runtime@3.6.33(@tarojs/shared@3.6.33))(@tarojs/shared@3.6.33)(@types/react@18.3.3)(postcss@8.4.39)(react@18.3.1)
+      classnames: 2.5.1
+
   '@tarojs/api@3.6.33':
     dependencies:
       '@babel/runtime': 7.24.8
@@ -10226,6 +10307,8 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
+  '@vant/area-data@1.5.1': {}
+
   '@vue/compiler-core@3.4.31':
     dependencies:
       '@babel/parser': 7.24.8
@@ -10604,6 +10687,8 @@ snapshots:
   arrify@1.0.1: {}
 
   arrify@2.0.1: {}
+
+  asap@2.0.6: {}
 
   asn1@0.2.6:
     dependencies:
@@ -11076,6 +11161,8 @@ snapshots:
       mimic-response: 1.0.1
 
   clone@1.0.4: {}
+
+  clsx@2.1.1: {}
 
   co@4.6.0: {}
 
@@ -11595,6 +11682,11 @@ snapshots:
   dom-converter@0.2.0:
     dependencies:
       utila: 0.4.0
+
+  dom-helpers@5.2.1:
+    dependencies:
+      '@babel/runtime': 7.24.8
+      csstype: 3.1.3
 
   dom-serializer@1.4.1:
     dependencies:
@@ -14813,6 +14905,10 @@ snapshots:
 
   promise-polyfill@7.1.2: {}
 
+  promise@8.3.0:
+    dependencies:
+      asap: 2.0.6
+
   prop-types@15.8.1:
     dependencies:
       loose-envify: 1.4.0
@@ -14879,6 +14975,10 @@ snapshots:
 
   quick-lru@4.0.1: {}
 
+  raf@3.4.1:
+    dependencies:
+      performance-now: 2.1.0
+
   randombytes@2.1.0:
     dependencies:
       safe-buffer: 5.2.1
@@ -14927,6 +15027,8 @@ snapshots:
 
   react-is@17.0.2: {}
 
+  react-is@18.3.1: {}
+
   react-reconciler@0.27.0(react@18.3.1):
     dependencies:
       loose-envify: 1.4.0
@@ -14936,6 +15038,15 @@ snapshots:
   react-refresh@0.11.0: {}
 
   react-refresh@0.4.3: {}
+
+  react-transition-group@4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      '@babel/runtime': 7.24.8
+      dom-helpers: 5.2.1
+      loose-envify: 1.4.0
+      prop-types: 15.8.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   react@18.3.1:
     dependencies:
