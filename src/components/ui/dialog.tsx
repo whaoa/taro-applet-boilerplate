@@ -32,10 +32,10 @@ export function Dialog(props: DialogProps) {
   } = props;
 
   const handleCancel = useEventCallback(() => (
-    Promise.resolve(onCancel?.()).then(() => onClose?.(false))
+    Promise.resolve(onCancel?.()).then(() => onClose?.())
   ));
   const handleConfirm = useEventCallback(() => (
-    Promise.resolve(onConfirm?.()).then(() => onClose?.(false))
+    Promise.resolve(onConfirm?.()).then(() => onClose?.())
   ));
   const [context] = useState<DialogContextValue>(() => ({
     onCancel: handleCancel,

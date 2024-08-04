@@ -13,8 +13,8 @@ const closeIconImage = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/
 type AvailablePopupProps = Pick<
   PopupProps,
   | 'className' | 'children'
-  | 'embedded' | 'open' | 'defaultOpen' | 'forceMount' | 'rootClassName'
-  | 'closeOnBackdropClick' | 'onClose'
+  | 'embedded' | 'visible' | 'forceMount' | 'rootClassName'
+  | 'closeOnOverlayClick' | 'onClose'
 >;
 
 export interface ModalProps extends AvailablePopupProps {
@@ -25,8 +25,8 @@ export interface ModalProps extends AvailablePopupProps {
 
 export function Modal(props: ModalProps) {
   const { className, children, rootClassName } = props;
-  const { embedded, open, defaultOpen, forceMount } = props;
-  const { closeOnBackdropClick = false, onClose } = props;
+  const { embedded, visible, forceMount } = props;
+  const { closeOnOverlayClick: closeOnBackdropClick = false, onClose } = props;
   const { title, TitleClassName, closeable = true } = props;
 
   const isTitleVisible = title || closeable;
@@ -37,12 +37,11 @@ export function Modal(props: ModalProps) {
       rootClassName={cn(embedded ? 'ui-modal--embedded' : 'ui-modal', rootClassName)}
       popupClassName="w-4/5"
       embedded
-      placement="center"
+      position="center"
       forceMount={forceMount}
-      open={open}
-      defaultOpen={defaultOpen}
-      backdropClassName="!bg-black/60"
-      closeOnBackdropClick={closeOnBackdropClick}
+      visible={visible}
+      overlayClassName="!bg-black/60"
+      closeOnOverlayClick={closeOnBackdropClick}
       onClose={onClose}
     >
       {isTitleVisible ? (
@@ -60,7 +59,7 @@ export function Modal(props: ModalProps) {
               src={closeIconImage}
               width={20}
               height={20}
-              onClick={() => onClose?.(false)}
+              onClick={onClose}
             />
           ) : null}
         </View>

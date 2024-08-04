@@ -1,6 +1,43 @@
 import { Text, View } from '@tarojs/components';
 
-export default function Index() {
+import { useCallback } from 'react';
+
+import { createModal } from '@/libs/modals';
+import { useModal, useModalManager } from '@/hooks/modals';
+import { Modal } from '@/components/ui/modal';
+import { withComposer } from '@/components/utility/compose';
+import { ModalManagerProvider } from '@/components/utility/modals';
+
+const AboutModal = createModal(() => {
+  const { visible, close } = useModal();
+
+  return (
+    <Modal title="About" visible={visible} onClose={close}>
+      <View className="py-1 text-sm">
+        <Text className="font-bold mr-2">Name:</Text>
+        <Text>taro-applet-boilerplate</Text>
+      </View>
+      <View className="py-1 text-sm">
+        <Text className="font-bold mr-2">Author:</Text>
+        <Text>whaoa</Text>
+      </View>
+      <View className="py-1 text-sm">
+        <Text className="font-bold mr-2">License:</Text>
+        <Text>MIT</Text>
+      </View>
+      <View className="py-1 text-sm">
+        <Text className="font-bold mr-2">Github:</Text>
+        <Text>whaoa/taro-applet-boilerplate</Text>
+      </View>
+    </Modal>
+  );
+});
+
+function Welcome() {
+  const mm = useModalManager();
+
+  const handleProjectNameClick = useCallback(() => mm.open(AboutModal), [mm]);
+
   return (
     <View className="mt-40 mx-auto py-3 px-3 w-9/12 rounded-xl border border-slate-300 bg-white shadow-xl">
       <View className="font-bold text-xl text-center">
@@ -21,8 +58,17 @@ export default function Index() {
       </View>
 
       <View className="mt-5 text-center">
-        <Text className="text-sm text-slate-400">taro-applet-boilerplate</Text>
+        <Text className="text-sm text-slate-400" onClick={handleProjectNameClick}>
+          taro-applet-boilerplate
+        </Text>
       </View>
     </View>
   );
 }
+
+const IndexView = withComposer(
+  ModalManagerProvider,
+  Welcome,
+);
+
+export default IndexView;

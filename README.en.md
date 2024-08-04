@@ -32,7 +32,7 @@ taro-applet-boilerplate is developed based on these technologies:
 - [zustand](https://github.com/pmndrs/zustand): for global state management
 - [TanStack Query](https://tanstack.com/query/v4/docs/framework/react/overview): for data fetching
 - [React Hook Form](https://react-hook-form.com/): for building forms
-- [Taroify](https://taroify.github.io/taroify.com/introduce/): a UI library, only used to implement some components
+- [NutUI](https://nutui.jd.com/taro/react/2x/): A Taro-based UI library
 
 PS: Tailwind CSS officially only supports web environment, applet environment is realized by [weapp-tailwindcss](https://github.com/sonofmagic/weapp-tailwindcss).
 
@@ -47,7 +47,7 @@ these useful features are implemented in the project through some awesome packag
 - Some [hooks](./src/hooks/form.ts) and [components](./src/components/utility/form.tsx) for React Hook Form.
 - The [SafeAreaInset](./src/components/ui/safe-area.tsx) component for handling screen safe areas.
 - The [Image](./src/components/ui/image.tsx) component for rendering images.
-- The Modal and Dialog component based on [Taroify/Popup](https://taroify.github.io/taroify.com/components/popup/).
+- The Modal and Dialog component based on [NutUI/Popup](https://nutui.jd.com/taro/react/2x/#/zh-CN/component/popup).
 
 ## 📖 License
 

@@ -1,14 +1,16 @@
 import { ScrollView, View } from '@tarojs/components';
 
 import { cn } from '@/libs/util/basic';
-import { Popup as PopupView } from '@/libs/taroify/popup';
+import { Popup as PopupView } from '@/libs/ui/popup';
 
 import type { ScrollViewProps, ViewProps } from '@tarojs/components';
-import type { PopupBackdropProps, PopupProps as PopupViewProps } from '@/libs/taroify/popup';
+import type { PopupProps as PopupViewProps } from '@/libs/ui/popup';
 
 type AvailablePopupProps = Pick<
   PopupViewProps,
-  'children' | 'placement' | 'open' | 'defaultOpen' | 'onClose'
+  | 'children' | 'visible'
+  | 'overlay' | 'overlayStyle' | 'overlayClassName' | 'closeOnOverlayClick'
+  | 'onClose' | 'onOverlayClick'
 >;
 
 export interface PopupProps extends AvailablePopupProps {
@@ -16,14 +18,9 @@ export interface PopupProps extends AvailablePopupProps {
   style?: ViewProps['style'];
 
   embedded?: boolean;
+  position?: 'top' | 'bottom' | 'left' | 'right' | 'center';
   lockScroll?: boolean;
   forceMount?: boolean;
-
-  withBackdrop?: boolean;
-  backdropStyle?: PopupBackdropProps['style'];
-  backdropClassName?: PopupBackdropProps['className'];
-  closeOnBackdropClick?: boolean;
-  onBackdropClick?: PopupBackdropProps['onClick'];
 
   rootClassName?: PopupViewProps['className'];
   rootStyle?: PopupViewProps['style'];
@@ -34,34 +31,30 @@ export interface PopupProps extends AvailablePopupProps {
 export function Popup(props: PopupProps) {
   const { className, style, children, embedded = false, forceMount = false } = props;
   const { rootClassName, rootStyle, popupClassName, popupStyle } = props;
-  const { placement = 'center', open, defaultOpen, lockScroll = true, onClose } = props;
-  const { withBackdrop = true, backdropClassName, backdropStyle } = props;
-  const { closeOnBackdropClick = true, onBackdropClick } = props;
+  const { position = 'center', visible, lockScroll = true, onClose } = props;
+  const { overlay = true, overlayClassName, overlayStyle } = props;
+  const { closeOnOverlayClick = true, onOverlayClick } = props;
 
   return (
     <View className={cn(embedded ? 'ui-popup--embedded' : 'ui-popup', rootClassName)} style={rootStyle}>
       <PopupView
         className={cn('!bg-transparent', popupClassName)}
         style={popupStyle}
-        placement={placement}
-        lock={lockScroll}
-        open={open}
-        defaultOpen={defaultOpen}
+        position={position}
+        visible={visible}
+        lockScroll={lockScroll}
+        overlay={overlay}
+        overlayStyle={overlayStyle}
+        overlayClassName={overlayClassName}
+        closeOnOverlayClick={closeOnOverlayClick}
         onClose={onClose}
+        onOverlayClick={onOverlayClick}
       >
-        {(!forceMount || open) ? (
+        {(!forceMount || visible) ? (
           <ScrollView className={cn('ui-popup__content', className)} style={style}>
             {children}
           </ScrollView>
         ) : null}
-
-        <PopupView.Backdrop
-          className={backdropClassName}
-          style={backdropStyle}
-          open={withBackdrop}
-          closeable={closeOnBackdropClick}
-          onClick={onBackdropClick}
-        />
       </PopupView>
     </View>
   );

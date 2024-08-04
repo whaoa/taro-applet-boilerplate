@@ -32,7 +32,7 @@ taro-applet-boilerplate 基于以下技术进行开发：
 - [zustand](https://github.com/pmndrs/zustand)：用于全局状态管理
 - [TanStack Query](https://tanstack.com/query/v4/docs/framework/react/overview)：用于数据请求
 - [React Hook Form](https://react-hook-form.com/)：用于构建表单
-- [Taroify](https://taroify.github.io/taroify.com/introduce/)：一个 Vant 组件的实现，目前仅用于实现部分组件
+- [NutUI](https://nutui.jd.com/taro/react/2x/)：一个基于 Taro 的 UI 组件库
 
 PS: Tailwind CSS 官方仅支持 Web 环境，小程序环境是通过 [weapp-tailwindcss](https://github.com/sonofmagic/weapp-tailwindcss) 来实现的。
 
@@ -46,7 +46,7 @@ PS: Tailwind CSS 官方仅支持 Web 环境，小程序环境是通过 [weapp-ta
 - React Hook Form 相关的 [Hooks](./src/hooks/form.ts)）和 [组件](./src/components/utility/form.tsx)
 - 内置了用于处理屏幕安全区的 [SafeAreaInset](./src/components/ui/safe-area.tsx) 组件
 - 内置了用于渲染图片的 [Image](./src/components/ui/image.tsx) 组件
-- 基于 [Taroify/Popup](https://taroify.github.io/taroify.com/components/popup/) 实现的 Modal / Dialog 组件
+- 基于 [NutUI/Popup](https://nutui.jd.com/taro/react/2x/#/zh-CN/component/popup) 实现的 Modal / Dialog 组件
 
 ## 📖 协议
 
