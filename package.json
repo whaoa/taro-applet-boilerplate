@@ -61,6 +61,7 @@
     "@tarojs/runtime": "3.6.33",
     "@tarojs/shared": "3.6.33",
     "@tarojs/taro": "3.6.33",
+    "@whaoa-libs/react-modal-manager": "^0.1.0",
     "clsx": "^2.1.1",
     "query-string": "^8.2.0",
     "react": "^18.0.0",

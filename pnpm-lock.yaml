@@ -62,6 +62,9 @@ importers:
       '@tarojs/taro':
         specifier: 3.6.33
         version: 3.6.33(@tarojs/helper@3.6.33)(@tarojs/runtime@3.6.33(@tarojs/shared@3.6.33))(@types/react@18.3.3)(postcss@8.4.39)
+      '@whaoa-libs/react-modal-manager':
+        specifier: ^0.1.0
+        version: 0.1.0(react@18.3.1)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -2149,6 +2152,12 @@ packages:
 
   '@webassemblyjs/wast-printer@1.12.1':
     resolution: {integrity: sha512-+X4WAlOisVWQMikjbcvY2e0rwPsKQ9F688lksZhBcPycBBuii3O7m8FACbDMWDojpAqvjIncrG8J0XHKyQfVeA==}
+
+  '@whaoa-libs/react-modal-manager@0.1.0':
+    resolution: {integrity: sha512-JN4KHVoolCRpMMPqZGK8sSr8lC9qgIPvqpip3xDGmJovyjX4BFUj9BLELg9f+p1Nq2AJ2SVPui6nYWaYSU+Umg==}
+    engines: {node: '>=18', pnpm: '>=9'}
+    peerDependencies:
+      react: ^18.0.0
 
   '@xtuc/ieee754@1.2.0':
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}
@@ -10487,6 +10496,10 @@ snapshots:
     dependencies:
       '@webassemblyjs/ast': 1.12.1
       '@xtuc/long': 4.2.2
+
+  '@whaoa-libs/react-modal-manager@0.1.0(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
 
   '@xtuc/ieee754@1.2.0': {}
 
