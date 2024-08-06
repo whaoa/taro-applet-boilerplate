@@ -33,6 +33,7 @@ taro-applet-boilerplate is developed based on these technologies:
 - [TanStack Query](https://tanstack.com/query/v4/docs/framework/react/overview): for data fetching
 - [React Hook Form](https://react-hook-form.com/): for building forms
 - [NutUI](https://nutui.jd.com/taro/react/2x/): A Taro-based UI library
+- [React Modal Manager](https://github.com/whaoa/react-modal-manager): A lightweight modal manager for React.
 
 PS: Tailwind CSS officially only supports web environment, applet environment is realized by [weapp-tailwindcss](https://github.com/sonofmagic/weapp-tailwindcss).
 
@@ -48,6 +49,9 @@ these useful features are implemented in the project through some awesome packag
 - The [SafeAreaInset](./src/components/ui/safe-area.tsx) component for handling screen safe areas.
 - The [Image](./src/components/ui/image.tsx) component for rendering images.
 - The Modal and Dialog component based on [NutUI/Popup](https://nutui.jd.com/taro/react/2x/#/zh-CN/component/popup).
+- An imperative modal manager based on [react-modal-manager](https://github.com/whaoa/react-modal-manager).
+- A [Page](./src/components/feature/page.tsx) component with customizable navigation bar.
+- A [UserLoginGuarder](./src/components/feature/user.tsx) component for route guarding of user login state.
 
 ## 📖 License
 
