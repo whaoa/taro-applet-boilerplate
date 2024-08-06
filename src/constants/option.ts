@@ -5,3 +5,4 @@ export const WEB_NAVIGATION_BAR_HEIGHT = 44;
 export const CACHE_NAME_PREFIX = 'taro-boilerplate';
 
 export const HOME_ROUTE_PATH = '/pages/index/index';
+export const LOGIN_ROUTE_PATH = 'pages/user/login';

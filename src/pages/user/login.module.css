@@ -1,0 +1,3 @@
+.input :global(.weui-input)::placeholder {
+  color: theme("colors.slate.400");
+}
