@@ -5,8 +5,13 @@
   "author": "whaoa",
   "license": "MIT",
   "homepage": "https://github.com/whaoa/taro-applet-boilerplate#readme",
-  "repository": "https://github.com/whaoa/taro-applet-boilerplate.git",
-  "bugs": "https://github.com/whaoa/taro-applet-boilerplate/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whaoa/taro-applet-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/whaoa/taro-applet-boilerplate/issues"
+  },
   "keywords": [
     "taro",
     "react",
