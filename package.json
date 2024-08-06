@@ -1,6 +1,6 @@
 {
   "name": "taro-applet-boilerplate",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "a template for applet project, with react and taro.",
   "author": "whaoa",
   "license": "MIT",
