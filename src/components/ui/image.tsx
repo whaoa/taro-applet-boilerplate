@@ -2,6 +2,7 @@ import { Image as TaroImage, View } from '@tarojs/components';
 
 import { useCallback, useMemo, useState } from 'react';
 
+import { IS_WEB_PLATFORM } from '@/constants/taro';
 import { cn } from '@/libs/util/basic';
 import { toRealSize } from '@/libs/taro/system';
 
@@ -82,27 +83,31 @@ export function Image(props: ImageProps) {
       style={style}
       className={cn(
         embedded ? 'ui-image__embedded' : 'ui-image',
-        `ui-image--${loadingStatus} *:w-full *:h-full`,
+        `ui-image--${loadingStatus}`,
         style.width === 'auto' && 'max-w-max',
         className,
       )}
       onClick={onClick}
     >
       {loadingStatus === 'idle' ? (
-        <View className="ui-image__placeholder">
+        <View className="ui-image__placeholder w-full h-full">
           {placeholder ?? <View className="bg-slate-100 h-full" />}
         </View>
       ) : null}
 
       {loadingStatus === 'loading' ? (
-        <View className="ui-image__filler">
+        <View className="ui-image__filler w-full h-full">
           {filler ?? <View className="bg-slate-50 h-full" />}
         </View>
       ) : null}
 
       {(loadingStatus === 'loading' || loadingStatus === 'loaded') ? (
         <TaroImage
-          className={cn('ui-image__image block *:max-w-none', loadingStatus === 'loading' && 'hidden')}
+          className={cn(
+            'ui-image__image block w-full h-full',
+            loadingStatus === 'loading' && 'hidden',
+            IS_WEB_PLATFORM && '*:max-w-none',
+          )}
           mode={imageFillMode}
           src={source}
           onLoad={handleLoaded}
@@ -112,7 +117,7 @@ export function Image(props: ImageProps) {
       ) : null}
 
       {loadingStatus === 'error' ? (
-        <View className="ui-image__fallback">
+        <View className="ui-image__fallback w-full h-full">
           {fallback ?? <View className="h-full bg-slate-200" />}
         </View>
       ) : null}
