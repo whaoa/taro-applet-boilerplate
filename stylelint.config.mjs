@@ -22,12 +22,12 @@ export default {
     'no-duplicate-selectors': null,
     'selector-not-notation': 'simple',
     'selector-class-pattern': null,
-    // 'selector-type-no-unknown': [
-    //   true,
-    //   {
-    //     ignoreTypes: ['/^taro-/', 'page'],
-    //   },
-    // ],
+    'selector-type-no-unknown': [
+      true,
+      {
+        ignoreTypes: ['/^taro-/', 'page'],
+      },
+    ],
     'selector-pseudo-class-no-unknown': [
       true,
       {
