@@ -1,7 +1,14 @@
 import { useEffect, useMemo } from 'react';
 
 import { IS_WEB_PLATFORM } from '@/constants/taro';
-import { getNavigationBoundingClientRect, getSafeAreaInsetsSync } from '@/libs/taro/system';
+import { getNavigationBoundingClientRect, getSafeAreaInsetsSync, getSystemInfoSync } from '@/libs/taro/system';
+
+export function useViewport() {
+  return useMemo(() => {
+    const si = getSystemInfoSync();
+    return { windowWidth: si.windowWidth, windowHeight: si.windowHeight };
+  }, []);
+}
 
 let navigationLayoutCache: ReturnType<typeof getNavigationBoundingClientRect> | null = null;
 
