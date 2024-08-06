@@ -15,11 +15,17 @@ export const getSystemInfoSync = Taro.getSystemInfoSync;
 
 export const toRealSize = Taro.pxTransform;
 
-export function toRealPixel(size: number, si?: SystemInfo) {
+export function toRealPixel(size: number, si?: Pick<SystemInfo, 'windowWidth'>) {
   const windowWidth = (si || getSystemInfoSync()).windowWidth;
   size = Number(size);
   return size ? (size * windowWidth) / BASE_DESIGN_WIDTH : 0;
 };
+
+export function toRelativeSize(pixel: number, si?: Pick<SystemInfo, 'windowWidth'>) {
+  const windowWidth = (si || getSystemInfoSync()).windowWidth;
+  pixel = Number(pixel);
+  return pixel ? windowWidth / BASE_DESIGN_WIDTH * pixel : 0;
+}
 
 function isCustomNavigation(si?: SystemInfo) {
   if (IS_WEB_PLATFORM) {
@@ -85,7 +91,8 @@ export function getNavigationBoundingClientRect(si?: SystemInfo) {
 
   if (isCustomMode && !IS_UNSUPPORTED_PLATFORM) {
     if (IS_WEB_PLATFORM) {
-      right = si.windowWidth;
+      left = 10;
+      right = si.windowWidth - left;
       height = toRealPixel(WEB_NAVIGATION_BAR_HEIGHT, si);
     } else {
       if (PLATFORM === 'tt') {

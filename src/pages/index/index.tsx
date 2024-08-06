@@ -7,6 +7,7 @@ import { useModal, useModalManager } from '@/hooks/modals';
 import { Modal } from '@/components/ui/modal';
 import { withComposer } from '@/components/utility/compose';
 import { ModalManagerProvider } from '@/components/utility/modals';
+import { Page } from '@/components/feature/page';
 
 const AboutModal = createModal(() => {
   const { visible, close } = useModal();
@@ -68,6 +69,7 @@ function Welcome() {
 
 const IndexView = withComposer(
   ModalManagerProvider,
+  <Page title="Welcome" />,
   Welcome,
 );
 
