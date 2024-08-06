@@ -22,6 +22,14 @@ text {
   box-sizing: border-box;
 }
 
+button {
+  line-height: 1.42 !important;
+}
+
+button::after {
+  content: none !important;
+}
+
 /* remove navigation transition animation */
 .taro_router .taro_page {
   transition: none !important;
